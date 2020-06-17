@@ -1,0 +1,73 @@
+// Font:
+@import url('https://fonts.googleapis.com/css2?family=Crete+Round&family=Source+Sans+Pro:wght@300;400;600;700;900&display=swap');
+$logotype: 'Crete Round', serif;
+$body: 'Source Sans Pro', sans-serif;
+
+//Colours:
+$dark-liver: #403f4cff;
+$sizzling-red: #e84855ff;
+$naples-yellow: #f9dc5cff;
+$azure: #3185fcff;
+$cameo-pink: #efbcd5ff;
+
+$white: #f1f1f1;
+$light-grey: #dddddd;
+$dark-grey: $dark-liver;
+$black: #000000;
+$primary: $naples-yellow;
+$secondary: $azure;
+$tertiary: $cameo-pink;
+$error: $sizzling-red;
+
+//Breakpoints:
+$screen-sm-min: 576px;
+$screen-md-min: 768px;
+$screen-lg-min: 992px;
+$screen-xl-min: 1200px;
+
+//Mixins
+@mixin sm {
+   @media (min-width: #{$screen-sm-min}) {
+       @content;
+   }
+}
+@mixin md {
+   @media (min-width: #{$screen-md-min}) {
+       @content;
+   }
+}
+@mixin lg {
+   @media (min-width: #{$screen-lg-min}) {
+       @content;
+   }
+}
+@mixin xl {
+   @media (min-width: #{$screen-xl-min}) {
+       @content;
+   }
+}
+@mixin rwd($screen) {
+   @media (min-width: $screen+'px') {
+       @content;
+   }
+}
+
+//Variables:
+
+$min-height: 638px;
+$ideal-height: 974px;
+
+$container-width: 1200px;
+
+$nav-height: 60px;
+
+$workspace-height: calc(100vh - #{$nav-height});
+
+$grid-width: calc(#{$workspace-height} * 0.8);
+$grid-height: $grid-width;
+$grid-min-width: calc(#{$min-height} * 0.8);
+$grid-min-height: $grid-min-width;
+
+$toolbar-width: 60px;
+$toolbar-height: $grid-height;
+$toolbar-min-height: $grid-min-height;

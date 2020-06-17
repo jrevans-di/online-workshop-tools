@@ -1,0 +1,21 @@
+.board {
+  .inner-board {
+    width: 100%;
+    max-width: 80vh;
+    position: relative;
+    background-color: $light-grey;
+    &:before {
+      content: "";
+      display: block;
+      padding-top: 100%; /* initial ratio of 1:1*/
+    }
+    .board-squares {
+      width: 100%;
+      height: 100%;
+      top: 0;
+      position: absolute;
+      display: flex;
+      flex-wrap: wrap;
+    }
+  }
+}

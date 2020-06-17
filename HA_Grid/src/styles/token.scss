@@ -1,0 +1,43 @@
+$token-width: 12.5vh;
+$token-height: calc(#{$token-width}*0.5);
+
+$token-min-width: calc(#{$min-height}*0.15);
+$token-min-height: calc(#{$token-min-width}*0.5);
+
+.inner-token {
+  position: absolute;
+  width: $token-width;
+  height: $token-height;
+  min-width: $token-min-width;
+  min-height: $token-min-height;
+  display: flex;
+  align-items: center;
+  border: 1px $black solid;
+  border-radius: 30px;
+  background-color: $light-grey;
+  cursor: move;
+  z-index: 10;
+  &:hover {
+    background-color: $primary;
+    box-shadow: 2px 2px 2px 2px $light-grey;
+    transform: translateY(-1px);
+  }
+  svg {
+    position: absolute;
+    width: 100px;
+    height: 100%;
+    left: 10%;
+    font-size: 1rem;
+  }
+  .token-text {
+    position: absolute;
+    width: 66%;
+    left: 33%;
+  }
+  &.property {
+    background-color: $primary;
+  }
+  &.personal {
+    background-color: $tertiary;
+  }
+}
