@@ -1,0 +1,81 @@
+.header {
+  position: static;
+  background-color: $dark-grey;
+  color: $white;
+  .inner-header {
+    width: 100%;
+    height: $nav-height;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    .scenario {
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      .title {
+        display: flex;
+        align-items: center;
+        color: $white;
+        span {
+          margin-right: 15px;
+          font-size: 1.25rem;
+        }
+      }
+    }
+  }
+}
+
+.button-container {
+  button {
+    border: none;
+    padding: 5px;
+    font-size: 1.25rem;
+    text-decoration: none;
+    color: $white;
+    background-color: $dark-grey;
+    &.info-button {
+      margin-left: 15px;
+    }
+    &.close-button {
+      &:hover {
+        color: $error;
+      }
+    }
+    &:hover {
+      color: $primary;
+    }
+    &:focus {
+      outline: 1px dashed $primary;
+    }
+  }
+}
+
+.floating-window {
+  display: none;
+  position: absolute;
+  width: 600px;
+  top: 50%;
+  transform: translateY(-50%);
+  box-shadow: 3px 3px 6px 3px #0000003D;
+  background-color: $dark-grey;
+  z-index: 20;
+  &.show {
+    display: block;
+  }
+  .controls {
+    display: flex;
+    justify-content: flex-end;
+    padding: 5px 5px 0px 5px;
+  }
+  .content {
+    text-align: left;
+    h1 {
+      font-size: 1.75rem;
+      padding: 0px 15px;
+    }
+    p {
+      font-size: 1.25rem;
+      padding: 15px 15px 30px 15px;
+    }
+  }
+}

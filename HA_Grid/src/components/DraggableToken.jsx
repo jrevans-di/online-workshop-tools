@@ -1,6 +1,5 @@
-import React, { useEffect } from "react";
+import React from "react";
 import { DragPreviewImage, useDrag } from "react-dnd";
-import { getEmptyImage } from 'react-dnd-html5-backend'
 
 import Token from "./Token.jsx";
 import { ItemTypes } from "../js/ItemTypes";

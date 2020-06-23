@@ -1,30 +1,39 @@
-import React, { useCallback, useState } from "react";
+import React, { useState } from "react";
 import { useDrop } from "react-dnd";
-import { update } from "immutability-helper";
 
 import DraggableToken from "./DraggableToken.jsx";
 import Grid from "./Grid.jsx";
 import Toolbar from "./Toolbar.jsx";
 
 import { ItemTypes } from "../js/ItemTypes";
-import { snapToGrid as doSnapToGrid } from "../js/snapToGrid";
 
 const renderToken = (props, key) => {
   return <DraggableToken key={key} id={key} {...props} />;
 };
 
 const Workspace = ({ snapToGrid }) => {
-  const [tokens, setTokens] = useState([
-    { top: 0, left: 825, title: "Electricty use", category: "property" },
-    { top: 80, left: 825, title: "Water use", category: "property" },
-    { top: 160, left: 825, title: "Financial income", category: "personal" },
-    { top: 240, left: 825, title: "Repairs history", category: "property" },
-    { top: 320, left: 825, title: "External C.C.T.V.", category: "property" },
-    { top: 400, left: 825, title: "Landline use", category: "personal" },
-    { top: 480, left: 825, title: "Internet speed", category: "property" },
-    { top: 560, left: 825, title: "Internet history", category: "personal" },
-    { top: 640, left: 825, title: "Medical info", category: "personal" },
-  ]);
+
+  const tokenInitalState = [
+    { top: 0, left: 770, title: "Energy use", category: "property" },
+    { top: 70, left: 770, title: "Water use", category: "property" },
+    { top: 140, left: 770, title: "Repairs history", category: "property" },
+    { top: 210, left: 770, title: "External C.C.T.V.", category: "property" },
+    { top: 280, left: 770, title: "Internet speed", category: "property" },
+    { top: 350, left: 770, title: "Carbon monoxide levels", category: "property" },
+    { top: 0, left: 900, title: "Financial income", category: "personal" },
+    { top: 70, left: 900, title: "Job status", category: "personal" },
+    { top: 140, left: 900, title: "Internet history", category: "personal" },
+    { top: 210, left: 900, title: "Health info", category: "personal" },
+    { top: 280, left: 900, title: "Home occupancy", category: "personal" },
+    { top: 350, left: 900, title: "Mobile phone use", category: "personal" },
+    { top: 420, left: 900, title: "Tenant location", category: "personal" },
+  ];
+
+  const [tokens, setTokens] = useState(tokenInitalState);
+
+  const resetTokens = () => {
+    setTokens(tokenInitalState)
+  };
 
   const [, drop] = useDrop({
     accept: ItemTypes.TOKEN,
@@ -56,7 +65,7 @@ const Workspace = ({ snapToGrid }) => {
           <Grid >
             {renderedTokens}
           </Grid>
-          <Toolbar />
+          <Toolbar resetTokens={resetTokens} />
         </div>
       </div>
     </div>

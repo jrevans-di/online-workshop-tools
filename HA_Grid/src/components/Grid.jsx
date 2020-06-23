@@ -18,7 +18,7 @@ const Grid = ({ children }) => {
   );
 };
 
-const GridSquare = ({ key, x, y }) => {
+const GridSquare = ({ index, x, y }) => {
   return <div className="square"></div>;
 };
 

@@ -2,12 +2,12 @@ import React from "react";
 
 const Navigation = (props) => {
   return (
-    <div className="navigation">
+    <div className="header">
       <div className="container">
-        <div className="inner-navigation">
-          <div className="nav-left">
+        <div className="inner-header">
+          <div className="header-left">
           </div>
-          <div className="nav-right">
+          <div className="header-right">
             <nav>Navigation menu goes here</nav>
           </div>
         </div>
